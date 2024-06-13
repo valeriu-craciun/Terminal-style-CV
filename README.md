@@ -64,7 +64,7 @@ Terminal-style-cv/
     ├── experience.txt
     ├── skills.txt
     └── contact.txt
-```bash
+```
 
 Edit the text files in the data subdirectory, I would say they have pretty explanatory names to not give it here. me.jpg represents the picture shown in about command.
 Edit the index.html + script.js to modify the title and some of the content. Feel free to modify it to make more usable.
