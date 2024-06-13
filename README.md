@@ -8,7 +8,6 @@ This project is a Terminal-style CV (Curriculum Vitae) template that provides a 
 
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -26,7 +25,6 @@ Before installation, ensure you have the following installed:
 
 - python3
 
-
 ### Steps
 
 1. Clone the repository:
@@ -41,7 +39,8 @@ Before installation, ensure you have the following installed:
    python3 -m http.server
 
 This will launch the application in your and access it directly in your local browser.
-Contributing
+
+### Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -53,6 +52,7 @@ Contributions are welcome! Please follow these steps:
     6. Create a new Pull Request.
 
 Please ensure your Pull Request adheres to the code of conduct.
-License
+
+### License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
