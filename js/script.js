@@ -2,13 +2,15 @@ const commands = {
     help: 'Available commands:\n - help\n - whoami\n - education\n - experience\n - skills\n - contact\n - clear',
 };
 
+const terminalPrompt=`${window.location.hostname}:$> `;
+
 function fetchAndDisplay(command, filePath) {
     return fetch(filePath)
         .then(response => response.text())
         .then(text => {
             const outputElement = document.getElementById('terminal-output');
             const commandOutput = document.createElement('div');
-            commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">cognitive.ro:$></span> ${command}</div><div>${text}</div><br/>`;
+            commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">${terminalPrompt}</span> ${command}</div><div>${text}</div><br/>`;
             outputElement.appendChild(commandOutput);
             document.getElementById('content').scrollTop = document.getElementById('content').scrollHeight;
         })
@@ -17,7 +19,7 @@ function fetchAndDisplay(command, filePath) {
 
 function handleCommand(event) {
     if (event.key === 'Enter') {
-        const input = event.target.value.trim().substr(16); // Remove the "cognitive.ro:$> "
+        const input = event.target.value.trim().substr(terminalPrompt.length); // Remove the "cognitive.ro:$> "
         const outputElement = document.getElementById('terminal-output');
         const commandOutput = document.createElement('div');
 
@@ -27,7 +29,7 @@ function handleCommand(event) {
                 outputElement.innerHTML = '<div>Welcome to my CV (Valeriu Craciun). Type \'help\' for a list of commands.</div><br/>';
                 break;
             case 'help':
-                commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">cognitive.ro:$></span> ${input}</div><div>${commands[input]}</div><br/>`;
+                commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">${terminalPrompt}</span> ${input}</div><div>${commands[input]}</div><br/>`;
                 outputElement.appendChild(commandOutput);
                 break;
             case 'whoami':
@@ -54,18 +56,18 @@ function handleCommand(event) {
                 fetchAndDisplay(input, 'data/contact.txt');
                 break;
             default:
-                commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">$></span> ${input}</div><div>Command not found. Type 'help' for a list of commands.</div><br/>`;
+                commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">${terminalPrompt}</span> ${input}</div><div>Command not found. Type 'help' for a list of commands.</div><br/>`;
                 outputElement.appendChild(commandOutput);
         }
 
         event.target.value = '';
         document.getElementById('content').scrollTo({ bottom: document.getElementById('content').scrollHeight, behavior: 'smooth' });
-        document.getElementById("terminal-input").value = "cognitive.ro:$> ";
+        document.getElementById("terminal-input").value = `${terminalPrompt}`;
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const outputElement = document.getElementById('terminal-output');
-    document.getElementById("terminal-input").value = "cognitive.ro:$> ";
+    document.getElementById("terminal-input").value = `${terminalPrompt}`;
     outputElement.innerHTML = '<div>Welcome to my CV (Valeriu Craciun). Type \'help\' for a list of commands.</div><br/>';
 });
