@@ -37,7 +37,7 @@ body {
 }
 
 #terminal-output {
-    flex: 1;
+    flex: 2;
     font-family: 'JetBrains Mono', monospace;
 }
 
