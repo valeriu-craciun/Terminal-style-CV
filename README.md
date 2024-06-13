@@ -2,7 +2,8 @@
 
 This project is a Terminal-style CV (Curriculum Vitae) template that provides a command-line interface for displaying personal information and skills.
 
-![image](https://github.com/valeriu-craciun/Terminal-style-CV/assets/35722502/c231e533-8f4b-4b46-a3db-d069a962c8b4)
+![image](https://github.com/valeriu-craciun/Terminal-style-CV/assets/35722502/62647169-83ea-4298-9fe3-b0c5d084b9a8)
+
 
 
 ![Demo](demo.gif)
