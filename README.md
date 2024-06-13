@@ -1,4 +1,4 @@
-# Terminal-style CV
+# Terminal style website CV
 
 This project is a Terminal-style CV (Curriculum Vitae) Website that provides a command-line interface for displaying personal information and skills.
 It is all static files, so you can just run an nginx, apache or just python in a container to display a simple page.
