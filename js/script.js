@@ -8,7 +8,7 @@ function fetchAndDisplay(command, filePath) {
         .then(text => {
             const outputElement = document.getElementById('terminal-output');
             const commandOutput = document.createElement('div');
-            commandOutput.innerHTML = `<div>> ${command}</div><div>${text}</div><br/>`;
+            commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">$></span> ${command}</div><div>${text}</div><br/>`;
             outputElement.appendChild(commandOutput);
             document.getElementById('content').scrollTop = document.getElementById('content').scrollHeight;
         })
@@ -26,7 +26,7 @@ function handleCommand(event) {
                 outputElement.innerHTML = '';
                 break;
             case 'help':
-                commandOutput.innerHTML = `<div>> ${input}</div><div>${commands[input]}</div><br/>`;
+                commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">$></span> ${input}</div><div>${commands[input]}</div><br/>`;
                 outputElement.appendChild(commandOutput);
                 break;
             case 'about':
@@ -54,7 +54,7 @@ function handleCommand(event) {
                 fetchAndDisplay(input, 'data/contact.txt');
                 break;
             default:
-                commandOutput.innerHTML = `<div>> ${input}</div><div>Command not found. Type 'help' for a list of commands.</div><br/>`;
+                commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">$></span> ${input}</div><div>Command not found. Type 'help' for a list of commands.</div><br/>`;
                 outputElement.appendChild(commandOutput);
         }
 
