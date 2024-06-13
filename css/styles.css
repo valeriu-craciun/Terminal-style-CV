@@ -1,13 +1,14 @@
 @font-face {
     font-family: 'JetBrains Mono';
     src: url('/webfonts/JetBrainsMono-Light.woff2') format('woff2'),
+         url('/webfonts/JetBrainsMono-Light.woff') format('woff');
     font-weight: 200;
     font-style: normal;
 }
 
 body {
-    background-color: #1e1e1e;
-    color: #00ff00;
+    background-color: #283a32; /* Dark green background color */
+    color: #c3e88d; /* Light green text color */
     font-family: 'JetBrains Mono', monospace;
     margin: 0;
     display: flex;
@@ -17,13 +18,14 @@ body {
 }
 
 .terminal {
-    border: 2px solid #00ff00;
+    border: 2px solid #8ae234; /* Green border color */
     font-family: 'JetBrains Mono', monospace;
     width: 80%;
     height: 80%;
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
+    background-color: #283a32; /* Dark green terminal background */
 }
 
 #content {
@@ -42,10 +44,9 @@ body {
 #terminal-input {
     background: none;
     border: none;
-    color: #00ff00;
+    color: #c3e88d; /* Light green text color */
     font-family: 'JetBrains Mono', monospace;
     font-size: 1em;
     outline: none;
     width: 100%;
 }
-
