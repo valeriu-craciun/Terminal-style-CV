@@ -17,7 +17,7 @@ function fetchAndDisplay(command, filePath) {
 
 function handleCommand(event) {
     if (event.key === 'Enter') {
-        const input = event.target.value.trim();
+        const input = event.target.value.trim().substr(2); // Remove the "$>"
         const outputElement = document.getElementById('terminal-output');
         const commandOutput = document.createElement('div');
 
@@ -60,10 +60,12 @@ function handleCommand(event) {
 
         event.target.value = '';
         document.getElementById('content').scrollTop = document.getElementById('content').scrollHeight;
+        document.getElementById("terminal-input").value = "$>";
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const outputElement = document.getElementById('terminal-output');
+    document.getElementById("terminal-input").value = "$>";
     outputElement.innerHTML = '<div>Welcome to my CV terminal (Valeriu Craciun). Type \'help\' for a list of commands.</div><br/>';
 });
