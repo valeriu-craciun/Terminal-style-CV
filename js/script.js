@@ -10,7 +10,7 @@ function fetchAndDisplay(command, filePath) {
         .then(text => {
             const outputElement = document.getElementById('terminal-output');
             const commandOutput = document.createElement('div');
-            commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">${terminalPrompt}</span> ${command}</div><div>${text}</div><br/>`;
+            commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">${terminalPrompt}</span>${command}</div><div>${text}</div><br/>`;
             outputElement.appendChild(commandOutput);
             document.getElementById('content').scrollTop = document.getElementById('content').scrollHeight;
         })
@@ -29,7 +29,7 @@ function handleCommand(event) {
                 outputElement.innerHTML = '<div>Welcome to my CV (Valeriu Craciun). Type \'help\' for a list of commands.</div><br/>';
                 break;
             case 'help':
-                commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">${terminalPrompt}</span> ${input}</div><div>${commands[input]}</div><br/>`;
+                commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">${terminalPrompt}</span>${input}</div><div>${commands[input]}</div><br/>`;
                 outputElement.appendChild(commandOutput);
                 break;
             case 'whoami':
