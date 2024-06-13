@@ -1,1 +1,1 @@
-Bash, some AWK and Sed, Java, SpringBoot, HTML ( not so much ), JavaScript ( if I say I know, please doubt it ), Node.js
+Bash, some AWK and Sed, Java, SpringBoot, HTML ( not so much ), JavaScript ( if I say I know, please doubt it ), Node.js (some), CSS (I am really struggling)

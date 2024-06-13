@@ -33,7 +33,7 @@ function handleCommand(event) {
                 outputElement.appendChild(commandOutput);
                 break;
             case 'whoami':
-                fetchAndDisplay(input, 'data/whoami.txt')
+                fetchAndDisplay(input, `data/${input}.txt`)
                     .then(() => {
                         const img = document.createElement('img');
                         img.src = 'data/me.jpg'; // Replace with the path to your image file
@@ -44,16 +44,10 @@ function handleCommand(event) {
                     });
                 break;
             case 'education':
-                fetchAndDisplay(input, 'data/education.txt');
-                break;
             case 'experience':
-                fetchAndDisplay(input, 'data/experience.txt');
-                break;
             case 'skills':
-                fetchAndDisplay(input, 'data/skills.txt');
-                break;
             case 'contact':
-                fetchAndDisplay(input, 'data/contact.txt');
+                fetchAndDisplay(input,  `data/${input}.txt`);
                 break;
             default:
                 commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">${terminalPrompt}</span> ${input}</div><div>Command not found. Type 'help' for a list of commands.</div><br/>`;
