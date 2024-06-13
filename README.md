@@ -33,25 +33,24 @@ Before installation, ensure you have the following installed:
    ```bash
    git clone https://github.com/valeriu-craciun/Terminal-style-CV.git
 2. Navigate into the project directory:
+   ```bash
    cd Terminal-style-CV
 
-   Usage
-
 3. To start the Terminal-style CV application, run:
-
-python3 -m http.server
+   ```bash
+   python3 -m http.server
 
 This will launch the application in your and access it directly in your local browser.
 Contributing
 
 Contributions are welcome! Please follow these steps:
 
-    Fork the repository.
-    Create a new branch (git checkout -b feature/your-feature).
-    Make your changes.
-    Commit your changes (git commit -am 'Add new feature').
-    Push to the branch (git push origin feature/your-feature).
-    Create a new Pull Request.
+    1. Fork the repository.
+    2. Create a new branch (git checkout -b feature/your-feature).
+    3. Make your changes.
+    4. Commit your changes (git commit -am 'Add new feature').
+    5. Push to the branch (git push origin feature/your-feature).
+    6. Create a new Pull Request.
 
 Please ensure your Pull Request adheres to the code of conduct.
 License
