@@ -1,5 +1,5 @@
 const commands = {
-    help: 'Available commands:\n - help\n - about\n - education\n - experience\n - skills\n - contact\n - clear',
+    help: 'Available commands:\n - help\n - whoami\n - education\n - experience\n - skills\n - contact\n - clear',
 };
 
 function fetchAndDisplay(command, filePath) {
@@ -23,14 +23,15 @@ function handleCommand(event) {
 
         switch (input) {
             case 'clear':
-                outputElement.innerHTML = '';
+                //outputElement.innerHTML = '';
+                outputElement.innerHTML = '<div>Welcome to my CV terminal (Valeriu Craciun). Type \'help\' for a list of commands.</div><br/>';
                 break;
             case 'help':
                 commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">$></span> ${input}</div><div>${commands[input]}</div><br/>`;
                 outputElement.appendChild(commandOutput);
                 break;
-            case 'about':
-                fetchAndDisplay(input, 'data/about.txt')
+            case 'whoami':
+                fetchAndDisplay(input, 'data/whoami.txt')
                     .then(() => {
                         const img = document.createElement('img');
                         img.src = 'data/me.jpg'; // Replace with the path to your image file
@@ -38,7 +39,6 @@ function handleCommand(event) {
                         img.style.width = '100px'; // Set the width of the image
                         img.style.height = 'auto'; // Automatically adjust the height to maintain the aspect ratio
                         outputElement.appendChild(img);
-                        document.getElementById('content').scrollTop = document.getElementById('content').scrollHeight;
                     });
                 break;
             case 'education':
@@ -59,7 +59,7 @@ function handleCommand(event) {
         }
 
         event.target.value = '';
-        document.getElementById('content').scrollTop = document.getElementById('content').scrollHeight;
+        document.getElementById('content').scrollTo({ bottom: document.getElementById('content').scrollHeight, behavior: 'smooth' });
         document.getElementById("terminal-input").value = "$>";
     }
 }
