@@ -1,0 +1,3 @@
+Email: <a href="mailto:valeriu.craciunl@cognitive.ro">valeriu.craciunl@cognitive.ro</a><br>
+LinkedIn: <a href="https://www.linkedin.com/in/valeriucraciun" target="_blank">My LinkedIn Profile</a><br>
+GitHub: <a href="https://github.com/valeriu-craciun" target="_blank">Valeriu Craciun</a><br>
