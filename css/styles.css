@@ -7,8 +7,8 @@
 }
 
 body {
-    background-color: #283a32; /* Dark green background color */
-    color: #c3e88d; /* Light green text color */
+    background-color: #1d1f21; /* Darker background color closer to Linux terminal */
+    color: #00ff00; /* Bright green text color */
     font-family: 'JetBrains Mono', monospace;
     margin: 0;
     display: flex;
@@ -18,14 +18,14 @@ body {
 }
 
 .terminal {
-    border: 2px solid #8ae234; /* Green border color */
+    border: 2px solid #00aa00; /* Bright green border color */
     font-family: 'JetBrains Mono', monospace;
     width: 80%;
     height: 80%;
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
-    background-color: #283a32; /* Dark green terminal background */
+    background-color: #1d1f21; /* Darker terminal background */
 }
 
 #content {
@@ -39,14 +39,15 @@ body {
 #terminal-output {
     flex: 2;
     font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em; /* Smaller font size for sharper text */
 }
 
 #terminal-input {
     background: none;
     border: none;
-    color: #c3e88d; /* Light green text color */
+    color: #00ff00; /* Bright green text color */
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1em;
+    font-size: 0.85em; /* Smaller font size for sharper text */
     outline: none;
     width: 100%;
 }
