@@ -19,14 +19,14 @@ function fetchAndDisplay(command, filePath) {
 
 const asciiArtTrain = `
           =====       _________                ___________ 
-      _D _|  |_______/        \\__I_I_____===__|_________| 
-     |(_)---  |   H\\________/ |   |        =|_____/     |
+      _D _|  |_______/        \\\\__I_I_____===__|_________| 
+     |(_)---  |   H\\\\________/ |   |        =|_____/     |
      /     |  |   H  |  |     |   |         | | |    ___ |
     |      |  |   H  |__--------------------| | |____/   |
-    | ________|___H__/__|_____/[][]~\\______| | |        |
+    | ________|___H__/__|_____/[][]~\\\\______| | |        |
     |/ |   |-----------I_____I [][] []  D   |_____/|  |  |
-    / =| o |=-~~\\  /~~\\  /~~\\  /~~\\ ____Y____________|
-    |___/        \\_/   \\_/   \\_/   \\_/         \\_/    
+    / =| o |=-~~\\\\  /~~\\\\  /~~\\\\  /~~\\\\ ____Y____________|
+    |___/        \\\\_/   \\\\_/   \\\\_/   \\\\_/         \\\\_/    
 `;
 
 function displayAsciiArtTrain() {
@@ -39,7 +39,7 @@ function displayAsciiArtTrain() {
     outputElement.appendChild(trainElement);
 
     let position = outputElement.clientWidth; // Start from the right edge
-    const intervalTime = 20; // Adjust this value to change the speed
+    const intervalTime = 5; // Adjust this value to change the speed of the ascii art train
     const interval = setInterval(() => {
         position -= 2; // Move left
         trainElement.style.left = `${position}px`;
@@ -49,7 +49,7 @@ function displayAsciiArtTrain() {
             clearInterval(interval);
             trainElement.remove();
         }
-    }, 50); // Adjust the speed by changing the interval time
+    }, intervalTime); // Adjust the speed by changing the interval time
 }
 
 function handleCommand(event) {
