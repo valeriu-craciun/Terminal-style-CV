@@ -24,8 +24,9 @@ body {
     height: 80%;
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto;
+    overflow: hidden; /* Ensures the train stays within the viewport */
     background-color: #1d1f21; /* Darker terminal background */
+    position: relative; /* To position the train within this element */
 }
 
 #content {
@@ -40,6 +41,7 @@ body {
     flex: 2;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85em; /* Smaller font size for sharper text */
+    position: relative; /* To ensure the train is positioned within this element */
 }
 
 #terminal-input {
@@ -50,4 +52,12 @@ body {
     font-size: 0.85em; /* Smaller font size for sharper text */
     outline: none;
     width: 100%;
+}
+
+.train {
+    position: absolute;
+    white-space: pre;
+    font-family: 'JetBrains Mono', monospace;
+    top: 50%;
+    transform: translateY(-50%);
 }
