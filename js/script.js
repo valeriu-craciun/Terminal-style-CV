@@ -26,7 +26,7 @@ function handleCommand(event) {
         switch (input) {
             case 'clear':
                 //outputElement.innerHTML = '';
-                outputElement.innerHTML = '<div>Welcome to my CV (Valeriu Craciun). Type \'help\' for a list of commands.</div><br/>';
+                outputElement.innerHTML = '<div>Welcome to my resume (Valeriu Craciun). Type \'help\' for a list of commands.</div><br/>';
                 break;
             case 'help':
                 commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">${terminalPrompt}</span>${input}</div><div>${commands[input]}</div><br/>`;
@@ -63,5 +63,5 @@ function handleCommand(event) {
 document.addEventListener('DOMContentLoaded', () => {
     const outputElement = document.getElementById('terminal-output');
     document.getElementById("terminal-input").value = `${terminalPrompt}`;
-    outputElement.innerHTML = '<div>Welcome to my CV (Valeriu Craciun). Type \'help\' for a list of commands.</div><br/>';
+    outputElement.innerHTML = '<div>Welcome to my resume (Valeriu Craciun). Type \'help\' for a list of commands.</div><br/>';
 });
