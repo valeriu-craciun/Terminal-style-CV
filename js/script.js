@@ -1,5 +1,5 @@
 const commands = {
-    help: 'Available commands:\n - help\n - whoami\n - education\n - experience\n - skills\n - contact\n - clear\n - sl',
+    help: 'Available commands:\n - help\n - whoami\n - education\n - experience\n - skills\n - contact\n - clear',
 };
 
 const terminalPrompt = `${window.location.hostname}:$> `;
@@ -34,22 +34,46 @@ function displayAsciiArtTrain() {
     const trainElement = document.createElement('div');
     trainElement.className = 'train';
     trainElement.style.whiteSpace = 'pre';
+    trainElement.style.position = 'absolute';
     trainElement.style.left = '100%';
+    trainElement.style.top = '50%';
+    trainElement.style.transform = 'translateY(-50%)';
     trainElement.innerHTML = `<pre>${asciiArtTrain}</pre>`;
     outputElement.appendChild(trainElement);
 
-    let position = outputElement.clientWidth; // Start from the right edge
-    const intervalTime = 5; // Adjust this value to change the speed of the ascii art train
+    let position = 100; // Start from the right edge
+    const intervalTime = 75; // Adjust this value to change the speed of the train
     const interval = setInterval(() => {
         position -= 2; // Move left
-        trainElement.style.left = `${position}px`;
+        trainElement.style.left = `${position}%`;
 
         // Remove the train after it goes off screen
-        if (position < -trainElement.clientWidth) {
+        if (position < -100) {
             clearInterval(interval);
             trainElement.remove();
         }
-    }, intervalTime); // Adjust the speed by changing the interval time
+    }, intervalTime); // Interval time in milliseconds
+}
+
+function showHiddenCommandMessage() {
+    const outputElement = document.getElementById('terminal-output');
+    const messageElement = document.createElement('div');
+    messageElement.className = 'hidden-command-message';
+    messageElement.innerHTML = `<div style="display: flex; align-items: center;">
+                                    <svg width="24" height="24"><use href="#cup-icon"></use></svg>
+                                    <span style="margin-left: 10px;">!!! 🏆 Just discovered a hidden command 🏆 !!!</span>
+                                </div>`;
+    outputElement.appendChild(messageElement);
+
+    // Fade out the message after 3 seconds
+    setTimeout(() => {
+        messageElement.style.transition = 'opacity 1s';
+        messageElement.style.opacity = '0';
+        setTimeout(() => {
+            messageElement.remove();
+            displayAsciiArtTrain(); // Display the train after the message fades out
+        }, 1000);
+    }, 2000);
 }
 
 function handleCommand(event) {
@@ -84,7 +108,7 @@ function handleCommand(event) {
                 fetchAndDisplay(input, `data/${input}.txt`);
                 break;
             case 'sl':
-                displayAsciiArtTrain();
+                showHiddenCommandMessage();
                 break;
             default:
                 commandOutput.innerHTML = `<div class="prompt-line"><span class="prompt">${terminalPrompt}</span> ${input}</div><div>Command not found. Type 'help' for a list of commands.</div><br/>`;

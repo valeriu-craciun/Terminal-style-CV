@@ -61,3 +61,13 @@ body {
     top: 50%;
     transform: translateY(-50%);
 }
+.hidden-command-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    color: #00ff00;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 20px;
+}
